@@ -1,0 +1,19 @@
+{
+  "userList": [
+    {
+      "name": "Ben Bryant",
+      "email": "bbryant@truecoders.io",
+      "role": "admin"
+    },
+    {
+      "name": "Seth Bowman",
+      "email": "sbowman@truecoders.io",
+      "role": "author"
+    },
+    {
+      "name": "Hunter Andersen",
+      "email": "handersen@truecoders.io",
+      "role": "member"
+    }
+  ]
+}

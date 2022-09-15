@@ -4,6 +4,7 @@ import cors from "cors";
 import apiRouter from "./routes";
 import config from "./config";
 import { errorHandler } from "./middlewares/errorHandler";
+import { join } from "path";
 
 const app = express();
 
@@ -32,13 +33,16 @@ app.use(express.static("public"));
  */
 app.use("/api", apiRouter);
 
-/**
- * Sends the react app index.html for page requests
- * Only needed in production when you are not using the react dev server
- */
-app.use((req, res, next) => {
+app.get("/", (req, res, next) => {
   try {
-    res.sendFile(join(__dirname, "../../public/index.html"));
+    res.sendFile(join(__dirname, "public/index.html"));
+  } catch (error) {
+    next(error);
+  }
+});
+app.get("/new", (req, res, next) => {
+  try {
+    res.sendFile(join(__dirname, "public/new.html"));
   } catch (error) {
     next(error);
   }

@@ -1,5 +1,5 @@
 import express from "express";
-import productRouter from "./products.route";
+import usersRouter from "./users.route";
 
 const router = express.Router();
 
@@ -7,6 +7,6 @@ router.get("/test", (req, res, next) => {
   res.send("working");
 });
 
-router.use("/products", productRouter);
+router.use("/users", usersRouter);
 
 export default router;
