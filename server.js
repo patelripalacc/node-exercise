@@ -3,13 +3,12 @@ import morgan from "morgan";
 import cors from "cors";
 import apiRouter from "./routes";
 import config from "./config";
-import apiRouter from "./routes"
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/api/v1", apiRouter);
+app.use("/api", apiRouter);
 
 /**
  * Error handler middleware
