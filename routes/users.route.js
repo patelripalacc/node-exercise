@@ -1,54 +1,56 @@
-import express from "express";
-import db from "../mockdb";
+// import express from "express";
+// import db from "../mockdb";
+// import employees from "../controllers/employees.controller";
 
-const router = express.Router();
 
-router.get("/:id?", async (req, res, next) => {
-  try {
-    let { id } = req.params;
-    let data;
+// const router = express.Router();
 
-    if (id) {
-      data = await db.getOne(id);
-    } else {
-      data = await db.getAll();
-    }
+// router.get("/:id?", async (req, res, next) => {
+//   try {
+//     let { id } = req.params;
+//     let data;
 
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
-});
+//     if (id) {
+//       data = await employees.getOne(id);
+//     } else {
+//       data = await employees.getAll();
+//     }
 
-router.post("/", async (req, res, next) => {
-  try {
-    let newUser = req.body;
-    let data = await db.add(newUser);
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
-});
+//     res.json(data);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
-router.put("/:id", async (req, res, next) => {
-  try {
-    let { id } = req.params;
-    let updatedUser = req.body;
-    let data = await db.update(id, updatedUser);
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
-});
+// router.post("/", async (req, res, next) => {
+//   try {
+//     let newEmployee = req.body;
+//     let data = await employees.add(newEmployee);
+//     res.json(data);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
-router.delete("/:id", async (req, res, next) => {
-  try {
-    let { id } = req.params;
-    let data = await db.remove(id);
-    res.json(data);
-  } catch (err) {
-    next(err);
-  }
-});
+// router.put("/:id", async (req, res, next) => {
+//   try {
+//     let { id } = req.params;
+//     let updatedEmployee = req.body;
+//     let data = await employees.update(id, updatedEmployee);
+//     res.json(data);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
-export default router;
+// router.delete("/:id", async (req, res, next) => {
+//   try {
+//     let { id } = req.params;
+//     let data = await employees.remove(id);
+//     res.json(data);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+// export default router;
